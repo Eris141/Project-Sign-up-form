@@ -44,7 +44,7 @@ body {
 
 .logo h1 {
   font-size: 24px;
-  font-family: "Roboto_regular";
+  font-family: "Roboto";
   color:  whitesmoke;
 }
 
@@ -63,9 +63,39 @@ body {
   padding: 1rem;
 }
 
-.form-div {
+.text-div {
+  display: flex;
+  justify-content: left;
   float: right;
   width: 60%;
-  
-  background-color: aqua;
+  background-color: rgb(255, 251, 246);
+  padding-top: 10rem;
+  padding-left: 4rem;
+  flex-direction: column;
+}
+
+.text-div h1 {
+  font-family: "Roboto_medium";
+  padding-bottom: 1.4rem;
+}
+
+.text-div p {
+  line-height: 1.5rem;
+  padding-bottom: 3rem;
+  max-width: 80%;
+}
+
+.form-div {
+  display: flex;
+  position: relative;
+  justify-content: left;
+  left: 0px;
+  background-color: white;
+  width: 60%;
+  padding: 2rem 1rem 2rem 4rem; 
+  box-shadow: 2px 4px 10px rgb(0, 0, 0, 0.1);
+}
+
+.form-div h3 {
+  font-weight: 500;
 }
