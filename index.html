@@ -8,25 +8,62 @@
 </head>
 <body>
   <div class="image_container">
-    <img class="image" src="images/m.avif">
+    <div class="imag-div">
+      <img class="image" src="images/m.avif">
+    </div>
     <div class="text-div">
       <h1>Mountain Travel Booking</h1>
       <p>
         “Climb the mountain not to plant your flag, but to embrace the challenge, enjoy the air and behold the view. Climb it so you can see the world, not so the world can see you.” —David McCullough Jr. </p>
-
       </div>
-      <div class="form-div">
+
+      <div class="form-div" id="form">
         <h3>Book Now</h3>
-        <form action="#" method="get"></form>
+        <form action="" method="get" class="sing-in-form">
+            <div class="name">
+              <label for="name">FIRST NAME</label>
+              <input id="name" name="full-name" type="text" placeholder="Your name" maxlength="25" required />
+            </div>
+            <div>
+              <label for="last-name">LAST NAME</label>
+              <input required id="last-name" name="last-name" type="text"  placeholder="Last name" maxlength="25"/>
+            </div>
+            
+            <div>
+              <label for="email">EMAIL</label>
+              <input required id="email" name="email" type="email" placeholder="joe@dxemple.com"/>
+            </div>
+
+            <div>
+              <label for="phone-number">PHONE NUMBER</label>
+              <input required id="phone-number" name="phone-number" type="number" placeholder="(+41) 344 544"/>
+            </div>
+
+            <div class="pass">
+              <label for="password">PASSWORD</label>
+              <input required  id="password" name="password" type="password" minlength="6" maxlength="20" placeholder="Enter password"/>
+            </div>
+
+            <div class="com-pass">
+              <label for="comfirm-password">COMFIRM PASSWORD</label>
+              <input  required id="comfirm-password" name="password" type="password" minlength="6" maxlength="20" placeholder="Comfirm password"/>
+            </div>
+            <div class="button-div">
+              <button type="submit" for="form" value="submit">Create Account</button>
+              <p>Already have an account?  <span> Log in</span></p>
+            </div>
+
+        </form>
+      </div>
+      
+      
+      <div class="logo_background">
+        <div class="logo-div">
+            <img src="/images/logom1.webp">
+            <h1>Mountain Travel </h1>
+        </div>
       </div>
 
-  </div>
-
-  <div class="logo_background">
-    <div class="logo">
-        <img src="/images/logom1.webp">
-        <h1>Mountain Travel </h1>
-    </div>
   </div>
 
   

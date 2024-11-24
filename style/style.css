@@ -9,7 +9,18 @@
   src: url('/font/Roboto-Medium.woff2');
 }
 
+:root {
+  --font-family-regular: "Roboto";
+  --font-family-medium: "Roboto_medium";
 
+  --background-color: rgb(255, 251, 246); 
+  --error-color: #D55C5F;
+  --input-on-focus: #7ca8ff;
+  --shadows: 2px 4px 10px rgb(0, 0, 0, 0.1);
+  --button-background-color: #596D48;
+
+  --input-text-size: clamp(1vw, 1.2vw, 1.5vw);
+}
 
 * {
   margin: 0;
@@ -18,17 +29,18 @@
 }
 
 body {
-  overflow-x: hidden;
   font-family: "Roboto";
+  height: 100%;
+  width: 100%;
 }
 
 .image {
-  float: left;
+  height: 100%;
+  float: left; 
   width: 40%;
-  z-index: -1;
 }
 
-.logo  {
+.logo-div  {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,14 +48,14 @@ body {
   margin: 1rem;
 }
 
-.logo img  {
-  max-width: 3rem;
-  max-height: rem;
+.logo-div img  {
+  max-width: 12%;
+  min-width: 5%;
   border-radius: 1rem;  
 }
 
-.logo h1 {
-  font-size: 24px;
+.logo-div h1 {
+  font-size: clamp(0.2vw, 2vw, 5vw);
   font-family: "Roboto";
   color:  whitesmoke;
 }
@@ -52,14 +64,13 @@ body {
   display: flex;
   background-color: black;
   opacity: 0.8;
-  max-width: 25%;
-  width: 29%;
-  height: 100px;
+  max-width: 40%;
+  max-height: 15%;
   position: absolute;
-  top: 1rem;
-  left: 5rem;
-  border-radius: 1rem;
+  top: 0rem;
+  left: 0rem;
   justify-content: center;
+  align-items: center;
   padding: 1rem;
 }
 
@@ -69,33 +80,151 @@ body {
   float: right;
   width: 60%;
   background-color: rgb(255, 251, 246);
-  padding-top: 10rem;
-  padding-left: 4rem;
+  padding-top: 10%;
+  padding-left: 4%;
   flex-direction: column;
 }
 
 .text-div h1 {
   font-family: "Roboto_medium";
-  padding-bottom: 1.4rem;
+  padding-bottom: clamp(0.4vw, 1.4vw, 2.3vw);
+  font-size: clamp(1vw, 2.5vw, 3vw);
 }
 
 .text-div p {
-  line-height: 1.5rem;
-  padding-bottom: 3rem;
-  max-width: 80%;
+  line-height: clamp(1vw, 2vw, 2.1vw);
+  padding-bottom: clamp(0.4vw, 1.3vw, 2.3vw);
+  padding-right: 2rem;
+  font-size: clamp(1vw, 1.2vw, 1.5vw);
 }
 
 .form-div {
   display: flex;
-  position: relative;
   justify-content: left;
-  left: 0px;
-  background-color: white;
+  float: right;
   width: 60%;
-  padding: 2rem 1rem 2rem 4rem; 
+  height: 80%;
+  padding-top: 2%;
+  padding-left: 4%;
+  padding-bottom: 2%;
+  flex-direction: column;
+  background-color: white;
   box-shadow: 2px 4px 10px rgb(0, 0, 0, 0.1);
 }
 
 .form-div h3 {
   font-weight: 500;
+  padding-bottom: clamp(0.4vw, 2vw, 2.3vw);
+  font-size: clamp(1.4vw, 1.8vw, 2.4vw);
+
+}
+
+.sing-in-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.4vw, 1.4vw, 2.3vw);
+  width: 80%;
+  height: auto;
+
+}
+
+
+.form-div input[type="text"],
+.form-div input[type="email"],
+.form-div input[type="number"],
+.form-div input[type="password"] {
+  width: clamp(10vw, 60vw, 20vw);
+  padding: 2%;
+  background-color: #f8f8f8;
+  border: none;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  outline: none;
+}
+
+
+
+.form-div input[type="password"]:invalid {
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+.form-div .pass::after {
+  padding: 5%;
+  content: " * Use 6 words or more!";
+  font-size: 12px;
+  color: var(--error-color);
+}
+
+.form-div .com-pass::after {
+  padding: 5%;
+  content: " * Match Password!";
+  font-size: 12px;
+  color: var(--error-color);
+}
+
+.form-div input:valid {
+  border: 1px solid green;
+  color: green;
+  border-radius: 4px;
+  box-shadow: none;
+  content: none;
+}
+
+
+.form-div input[type="text"]:focus,
+.form-div input[type="email"]:focus,
+.form-div input[type="number"]:focus,
+.form-div input[type="password"]:focus {
+  border: 1px solid var(--input-on-focus);
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+
+.form-div label {
+  position: relative;
+  font-weight: 100;
+  color: rgb(20, 20, 20);
+  font-size: var(--input-text-size);
+  text-align: right;
+  width: 250px;
+}
+
+.button-div {
+  position: absolute;
+  top: clamp(47vw, 40vw, 45vw);
+  left: 44%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.button-div button {
+  width: 100%;
+  height: auto;
+  padding: 12px 32px 12px 32px;
+  margin-bottom: clamp(0.3vw, 1.5vw, 3vw);
+  color: white;
+  background-color: var(--button-background-color);
+  border: none;
+  border-radius: 12px;
+  font-size: var(--input-text-size);
+  cursor: pointer;
+}
+
+button:hover {
+  border: #596D48;
+  box-shadow: 2px 4px 10px rgb(0, 0, 0, 0.1);
+}
+
+.button-div p {
+  font-size: var(--input-text-size);
+}
+
+.button-div span {
+  font-weight: bold;
+  color: #7ca8ff;
+  cursor: pointer;
 }
